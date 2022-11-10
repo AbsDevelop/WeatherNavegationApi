@@ -3,8 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './components/HomeScreen';
+import Brasilia from './components/Brasilia';
+import BeloHorizonte from './components/BeloHorizonte';
+import Curitiba from './components/Curitiba';
+import RiodeJaneiro from './components/RiodeJaneiro';
 import SaoPaulo from './components/SaoPaulo';
-import Peruibe from './components/Peruibe';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,9 +15,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Meteorologia" component={HomeScreen} />
+        <Stack.Screen name="Brasilia" component={Brasilia} />
+        <Stack.Screen name="BeloHorizonte" component={BeloHorizonte} />
+        <Stack.Screen name="Curitiba" component={Curitiba} />
+        <Stack.Screen name="RiodeJaneiro" component={RiodeJaneiro} />
         <Stack.Screen name="SaoPaulo" component={SaoPaulo} />
-        <Stack.Screen name="Peruibe" component={Peruibe} />
       </Stack.Navigator>
     </NavigationContainer>
   );

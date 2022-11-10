@@ -8,7 +8,7 @@ export default function App() {
   const br = `\n`;
 
   async function buscaCep(){
-    const response = await Api.get(`weather?array_limit=10&fields=only_results,temp,city_name,forecast,max,min,date,time,description,city,humidity,wind_speedy%20&key=ca53326e&city_name=SaoPaulo`);
+    const response = await Api.get(`weather?array_limit=10&fields=only_results,temp,city_name,forecast,max,min,date,time,description,city,humidity,wind_speedy%20&key=ca53326e&city_name=RiodeJaneiro,RJ`);
     setDadosA(response.data.forecast);
     setDadosB(response.data.forecast[1]);
   }
@@ -16,10 +16,10 @@ export default function App() {
   return (
     
       <View style={styles.container}>
-          <Text style={styles.title}>Meteorologia: Cidade de São Paulo</Text>
+          <Text style={styles.title}>Meteorologia: Cidade do Rio de Janeiro</Text>
 
           <Image style={styles.img}
-            source={{uri: 'https://www.viagensecaminhos.com/wp-content/uploads/2012/10/ponte-estaiada-sao-paulo-1.jpg'}}
+            source={{uri: ''}}
           />
             
           <TouchableOpacity style={styles.btn} onPress={buscaCep}>

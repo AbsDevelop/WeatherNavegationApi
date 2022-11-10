@@ -1,67 +1,58 @@
-import React, {useState}  from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, FlatList } from 'react-native';
-import Api from './components/Api';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView} from 'react-native';
 
-export default function App() {
-  const [dadosA, setDadosA] = useState("");
-  const [dadosB, setDadosB] = useState("");
-  const [dadosAS, setDadosAS] = useState("");
-  const [dadosBS, setDadosBS] = useState("");
-  const [cidade, setCidade] = useState("");
-  const br = `\n`;
-
-  async function buscaCep(){
-    const response = await Api.get(`weather?array_limit=10&fields=only_results,temp,city_name,forecast,max,min,date,time,description,city,humidity,wind_speedy%20&key=ca53326e&city_name=${cidade}`);
-    setDadosA(response.data.forecast);
-    setDadosB(response.data.forecast[1]);
-    setDadosAS(response.data);
-    setDadosBS(response.data);
-  }
-
+export default function App(navigation) {
   return (
-    
-      <View style={styles.container}>
-          <Text style={styles.title}>
-            Previsão do Tempo
-          </Text>
+    <ScrollView> 
+      <View style={styles.container}> 
+      
+        <Text style={styles.title}>
+          Previsão do Tempo
+        </Text>
 
-          <Image style={styles.img}
-            source={{uri: 'https://eusousolar.com.br/calculadora/img/sun.gif',}}
-          />
+        <Image style={styles.img}
+          source={{uri: 'https://eusousolar.com.br/calculadora/img/sun.gif',}}
+        />
+        
+        <Text style={styles.textBlock}>Escolha uma cidade para ver sua previsão do tempo:</Text>
+      
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={ () => navigation.navigate('SaoPaulo')}
+        >
+          <Text style={styles.textbtn}>São Paulo</Text>
+        </TouchableOpacity>
 
-          <Text style={styles.textBlock}>Informe sua Cidade:</Text>
-          <TextInput style={styles.input}
-            placeholder='                Ex.: São Paulo, SP                '
-            onChangeText={data=>setCidade(data)}
-          />
-            
-          <TouchableOpacity style={styles.btn} onPress={buscaCep}>
-            <Text style={styles.textbtn}>Buscar</Text>
-          </TouchableOpacity>	 
-          
-            {/* 
-            <Tempo dataA={dadosA}
-              dataB={dadosB} 
-              dataAS={dadosAS}
-              dataBS={dadosBS} 
-            /> 
-            */}
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={ () => navigation.navigate('RiodeJaneiro')}
+        >
+          <Text style={styles.textbtn}>Rio de Janeiro</Text>
+        </TouchableOpacity>
 
-            <FlatList
-              data={dadosA}
-              renderItem={({item}) => {
-                return(
-                  <View>
-                    <Text style={styles.date}>Data: {item.date}</Text>
-                    <Text>Max: {item.max}</Text>
-                    <Text>Min: {item.min}</Text>
-                    <Text>Descrição: {item.description}{br}</Text>
-                  </View> 
-                );
-              }}
-            />  
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={ () => navigation.navigate('Brasilia')}
+        >
+          <Text style={styles.textbtn}>Brasília</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={ () => navigation.navigate('Curitiba')}
+        >
+          <Text style={styles.textbtn}>Curítiba</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={ () => navigation.navigate('BeloHorizonte')}
+        >
+          <Text style={styles.textbtn}>Belo Horizonte</Text>
+        </TouchableOpacity>
+
       </View>
-    
+    </ScrollView>    
   );
 }
 
@@ -84,13 +75,8 @@ const styles = StyleSheet.create({
   img: {
     width: 190,
     height: 190,
-    marginTop: 30,
-    marginBottom: 30
-  },
-  input: {
-    backgroundColor: 'white',
-    borderWidth: 1,
-    textAlign: 'center'
+    marginTop: 15,
+    marginBottom: 15
   },
   textBlock: {
     fontSize: 20,
@@ -107,8 +93,5 @@ const styles = StyleSheet.create({
   textbtn: {
 	  fontSize: 20,
 	  textAlign: 'center'
-  },
-  date: {
-    fontWeight: 'bold'
   }
 });
