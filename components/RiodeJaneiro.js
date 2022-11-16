@@ -1,8 +1,8 @@
 import React, {useState}  from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, FlatList } from 'react-native';
-import Api from './components/Api';
+import Api from './Api';
 
-export default function App() {
+export default function RiodeJaneiro() {
   const [dadosA, setDadosA] = useState("");
   const [dadosB, setDadosB] = useState("");
   const br = `\n`;
@@ -19,7 +19,7 @@ export default function App() {
           <Text style={styles.title}>Meteorologia: Cidade do Rio de Janeiro</Text>
 
           <Image style={styles.img}
-            source={{uri: ''}}
+            source={{uri: 'https://s2.glbimg.com/cuDAfucCaFs4i4pXjPBj-JicC9A=/27x0:308x211/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/P/X/XrHEElRwKtzhRH2v2Ajg/giphy.gif'}}
           />
             
           <TouchableOpacity style={styles.btn} onPress={buscaCep}>

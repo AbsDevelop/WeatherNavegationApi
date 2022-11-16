@@ -16,11 +16,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Meteorologia" component={HomeScreen} />
-        <Stack.Screen name="Brasilia" component={Brasilia} />
-        <Stack.Screen name="BeloHorizonte" component={BeloHorizonte} />
-        <Stack.Screen name="Curitiba" component={Curitiba} />
-        <Stack.Screen name="RiodeJaneiro" component={RiodeJaneiro} />
-        <Stack.Screen name="SaoPaulo" component={SaoPaulo} />
+        <Stack.Screen name="Braslia" component={Brasilia} />
+        <Stack.Screen name="Belo Horizonte" component={BeloHorizonte} />
+        <Stack.Screen name="Curítiba" component={Curitiba} />
+        <Stack.Screen name="Rio de Janeiro" component={RiodeJaneiro} />
+        <Stack.Screen name="São Paulo" component={SaoPaulo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

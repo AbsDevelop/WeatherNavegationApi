@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView} from 'react-native';
 
-export default function App(navigation) {
+export default function HomeScreen(navigation) {
   return (
     <ScrollView> 
       <View style={styles.container}> 

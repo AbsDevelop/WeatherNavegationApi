@@ -1,8 +1,8 @@
 import React, {useState}  from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, FlatList } from 'react-native';
-import Api from './components/Api';
+import Api from './Api';
 
-export default function App() {
+export default function SaoPaulo() {
   const [dadosA, setDadosA] = useState("");
   const [dadosB, setDadosB] = useState("");
   const br = `\n`;

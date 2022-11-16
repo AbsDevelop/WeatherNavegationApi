@@ -1,8 +1,8 @@
 import React, {useState}  from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, FlatList } from 'react-native';
-import Api from './components/Api';
+import Api from './Api';
 
-export default function App() {
+export default function Brasilia() {
   const [dadosA, setDadosA] = useState("");
   const [dadosB, setDadosB] = useState("");
   const br = `\n`;
@@ -19,7 +19,7 @@ export default function App() {
           <Text style={styles.title}>Meteorologia: Cidade de Brasília</Text>
 
           <Image style={styles.img}
-            source={{uri: 'https://www.viagensecaminhos.com/wp-content/uploads/2012/10/ponte-estaiada-sao-paulo-1.jpg'}}
+            source={{uri: 'https://static.mundoeducacao.uol.com.br/mundoeducacao/2021/04/brasilia.jpg'}}
           />
             
           <TouchableOpacity style={styles.btn} onPress={buscaCep}>

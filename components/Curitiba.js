@@ -1,8 +1,8 @@
 import React, {useState}  from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, FlatList } from 'react-native';
-import Api from './components/Api';
+import Api from './Api';
 
-export default function App() {
+export default function Curitiba() {
   const [dadosA, setDadosA] = useState("");
   const [dadosB, setDadosB] = useState("");
   const br = `\n`;
@@ -19,7 +19,7 @@ export default function App() {
           <Text style={styles.title}>Meteorologia: Cidade de Curítiba</Text>
 
           <Image style={styles.img}
-            source={{uri: 'https://www.viagensecaminhos.com/wp-content/uploads/2012/10/ponte-estaiada-sao-paulo-1.jpg'}}
+            source={{uri: 'https://catracalivre.com.br/wp-content/uploads/2018/08/cidades-mais-baratas-viajar-feriado-7-de-setembro.jpg'}}
           />
             
           <TouchableOpacity style={styles.btn} onPress={buscaCep}>
